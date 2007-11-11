@@ -5,7 +5,7 @@
 Summary:	MDB data file access library
 Name:		php-%{modname}
 Version:	0.6.0
-Release:	%mkrel 1
+Release:	%mkrel 2
 Group:		Development/PHP
 License:	LGPL
 URL:		http://pecl.php.net/package/mdbtools
@@ -62,6 +62,18 @@ cat > %{buildroot}%{_sysconfdir}/php.d/%{inifile} << EOF
 extension = %{soname}
 EOF
 
+%post
+if [ -f /var/lock/subsys/httpd ]; then
+    %{_initrddir}/httpd restart >/dev/null || :
+fi
+
+%postun
+if [ "$1" = "0" ]; then
+    if [ -f /var/lock/subsys/httpd ]; then
+	%{_initrddir}/httpd restart >/dev/null || :
+    fi
+fi
+
 %clean
 rm -rf %{buildroot}
 
@@ -70,4 +82,3 @@ rm -rf %{buildroot}
 %doc package*.xml
 %attr(0644,root,root) %config(noreplace) %{_sysconfdir}/php.d/%{inifile}
 %attr(0755,root,root) %{_libdir}/php/extensions/%{soname}
-
