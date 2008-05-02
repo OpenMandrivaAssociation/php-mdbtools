@@ -5,7 +5,7 @@
 Summary:	MDB data file access library
 Name:		php-%{modname}
 Version:	1.0.0
-Release:	%mkrel 2
+Release:	%mkrel 3
 Group:		Development/PHP
 License:	LGPL
 URL:		http://pecl.php.net/package/mdbtools
@@ -16,7 +16,7 @@ Requires(pre):  apache-mod_php
 BuildRequires:	php-devel >= 3:5.2.0
 BuildRequires:	libmdbtools-devel
 BuildRequires:	file
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 mdbtools provides read access to MDB data files as used by Microsoft Access and
