@@ -5,7 +5,7 @@
 Summary:	MDB data file access library
 Name:		php-%{modname}
 Version:	1.0.0
-Release:	%mkrel 11
+Release:	%mkrel 12
 Group:		Development/PHP
 License:	LGPL
 URL:		http://pecl.php.net/package/mdbtools
