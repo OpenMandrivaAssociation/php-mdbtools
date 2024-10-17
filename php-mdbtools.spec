@@ -8,7 +8,7 @@ Version:	1.0.0
 Release:	%mkrel 23
 Group:		Development/PHP
 License:	LGPL
-URL:		http://pecl.php.net/package/mdbtools
+URL:		https://pecl.php.net/package/mdbtools
 Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
 Requires(pre): rpm-helper
 Requires(postun): rpm-helper
